@@ -1,1 +1,1 @@
-Bash projects
+Shell redirections project
