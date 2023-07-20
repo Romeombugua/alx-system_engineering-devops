@@ -1,15 +1,13 @@
-# make changes to config file using Puppet
+# enables connection to server without a password
 
-include stdlib
-
-file_line { 'Refuse to authenticate using a password':
+file_line {
+  'passAuth':
   ensure => present,
   path   => '/etc/ssh/ssh_config',
-  line   => 'PasswordAuthentication no',
-}
-
-file_line { 'Use private key':
+  line   => '   PasswordAuthentication no'
+  ;
+  'keyLocation':
   ensure => present,
   path   => '/etc/ssh/ssh_config',
-  line   => 'IdentityFile ~/.ssh/school'
+  line   => '   IdentityFile ~/.ssh/holberton'
 }
